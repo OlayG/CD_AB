@@ -1,11 +1,13 @@
 package com.example.albertsonsdemo.model
 
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class Lf(
+data class AcronymMeaning(
         val freq: Int,
-        val lf: String,
+        @field:Json(name = "lf")
+        val meaning: String,
         val since: Int,
         val vars: List<Var>
 )
